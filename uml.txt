@@ -1,0 +1,86 @@
+Business Class
+-------------------------------------
+- stringBusinessClass: stringstream
+-------------------------------------
++ BusinessClass()
++ BusinessClass(string n, string a, int pN, bool isC, double fC)
++ BusinessClass(const BusinessClass &other)
++ BusinessClass& operator = (const BusinessClass &other)
++ ~BusinessClass()
++ setIsWindow(): void
++ setTicketCost(double fC): void
++ toString(): string
+
+
+Customer Class
+-------------------------------------
+- reserved: bool
+- name: string
+- address: string
+- phoneNum: int
+- isChild: bool
+- isWindow: bool
+- ticketCost: double
+- BusinessClass: friend class
+- EconomyClass: friend class
+--------------------------------------
++ Customer()
++ Customer(string n, string a, int pN, bool isC)
++ ~Customer(): virtual
++ getReserved(): bool
++ getName(): string
++ getAddress(): string
++ getPhoneNum(): int 
++ getIsChild(): bool
++ getIsWindow(): bool
++ getTicketCost(): double
++ setReserved(bool trueFalse): void
++ setName(string n): void
++ setAddress(string a): void
++ setPhoneNum(int pN): void
++ setIsChild(bool isC): void
++ setIsWindow() = 0: virtual void
++ setTicketCost(double fC) = 0: virtual void
++ string toString() = 0: virtual
+
+
+Economy Class
+----------------------------------------
+- stringEconomyClass: stringstream
+----------------------------------------
++ EconomyClass()
++ EconomyClass(string n, string a, int pN, bool isC, double fC)
++ EconomyClass(const EconomyClass &other)
++ EconomyClass& operator = (const EconomyClass &other)
++ ~EconomyClass()
++ setIsWindow(): void
++ setTicketCost(double fC): void
++ toString(): string
+
+
+Flight
+----------------------------------------
+- flightName: string
+- flightCost: double
+- flightTime: bool
+- *bC: BusinessClass
+- *eC: EconomyClass
+- BusinessClass: friend class
+- EconomyClass: friend class
+- stringFlight: stringstream
+-----------------------------------------
++ Flight()
++ Flight(string fN, double fC, bool fT)
++ ~Flight()
++ getFlightName(): string
++ getFlightCost(): double
++ getFlightTime(): bool
++ getBusinessClass(int n): BusinessClass
++ getEconomyClass(int n): EconomyClass
++ setBusinessClass(int n, BusinessClass &busCla): void
++ setEconomyClass(int n, EconomyClass &ecoCla): void
++ cancelSeat(int n): void
++ setFlightName(string fN): void
++ setFlightCost(double fC): void
++ setFlightTime(bool trueFalse): void
++ toString(): string
